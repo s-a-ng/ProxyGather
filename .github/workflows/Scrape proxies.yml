@@ -48,3 +48,9 @@ jobs:
         commit_message: "Re-scrape proxies"
         file_pattern: "proxies/scraped-proxies.txt proxies/working-proxies-*.txt" # only commit the matching files
         push_options: '--force'
+        
+    - name: Update Server List
+      env:
+         API_KEY: ${{ secrets.API_KEY }}
+      run: |
+        curl -X POST http://pi.bug.tools:4200/api/update_scraper_list -H "x-api-key: $API_KEY"

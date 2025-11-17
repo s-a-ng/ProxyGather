@@ -6,7 +6,7 @@ name: Scrape and check proxies
 on:
    schedule:
      - cron: '*/20 * * * *'
- # workflow_dispatch: # be able to optionally run it manually
+   workflow_dispatch: # be able to optionally run it manually
 
 permissions:
   contents: write
